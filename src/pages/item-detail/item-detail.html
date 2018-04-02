@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar color="primary" >
+    <ion-title>
+      {{itemName}}
+    </ion-title>
+        <ion-buttons end>
+      <button ion-button icon-only (click)="saveOrder()"><ion-icon name="cart"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+       <img src="{{url}}"  height="200" width="100" />
+       <br/>
+      {{category}}
+      ${{price}}
+      <br/>
+      <br/>
+      {{description}}
+      <br/>
+
+       <ion-item>
+    <ion-range min="1" max="15" [(ngModel)]="quantity" color="primary" pin="true" snaps="true" >
+      <ion-label range-left>1</ion-label>
+      <ion-label range-right>15</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-item>
+  <ion-label>Select A PickUp Time</ion-label>
+  <ion-datetime minuteValues="0,15,30,45" displayFormat="MM-DD-YY  HH:mm" [(ngModel)]="myDate">
+  </ion-datetime>
+</ion-item>
+
+   <br/>
+    
+    <p> Total: ${{price}} x {{quantity}} = $ {{price*quantity}} </p>
+
+  </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="primary">
+     <ion-buttons left>
+      <button ion-button (click)= "logOut()">
+      <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>My Orders</ion-title>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ <ion-list>
+
+  <ion-card *ngFor="let order of orders" (click)="viewOrder(order)">
+  <img src="{{order.url}}"  height="150" width="100" />
+  <ion-card-content>
+    <ion-card-title>
+      {{order.itemName}}
+      </ion-card-title>
+    <p >
+      Quantity: {{order.quantity}}
+      <br/>
+     Total: ${{order.price*order.quantity}} 
+    <br/> 
+    Date/Time: {{order.myDate}}
+  </p>
+  </ion-card-content>
+</ion-card> 
+
+</ion-list>
+</ion-content>

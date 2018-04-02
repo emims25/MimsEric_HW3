@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="primary" >
+    <ion-title>
+      {{myDate}}
+    </ion-title>
+     
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+       <img src="{{url}}"  height="200" width="100" />
+
+      <ion-card-title>
+      {{itemName}}
+      </ion-card-title>
+      {{category}}
+      ${{price}}
+       <br/>
+       {{description}}
+    
+    <p> Total: ${{price}} x {{quantity}} = ${{price*quantity}} </p>
+
+  </ion-card-content>
+  </ion-card>
+</ion-content>
